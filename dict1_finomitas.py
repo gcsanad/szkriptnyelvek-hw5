@@ -69,11 +69,10 @@ the threshold. "You can tell me when I've worked through that," says he,
 looking as fierce as a commander."""
 
 def main():
-    #szavakHalmaza = listset(TEXT.split())
     tisztitott_szoveg = "".join(karakter for karakter in TEXT if karakter.isalnum() or karakter.isspace())
     szotar = {}
-    for szo in sorted(list(set(tisztitott_szoveg).split())):
-        szotar[szo] = tisztitott_szoveg.count(szo)
+    for szo in sorted(list(set(tisztitott_szoveg.lower().split()))):
+        szotar[szo] = tisztitott_szoveg.lower().count(szo)
     
     for k, v in szotar.items():
         print(k, " előfordulások száma: ", v)
